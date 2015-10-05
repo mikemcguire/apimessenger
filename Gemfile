@@ -16,7 +16,7 @@ gem 'httparty'
 
 gem 'puma'
 
-gem 'capistrano', '~> 3.4.0'
+gem 'capistrano', '~> 3.4.0', :group => :development
 
 #gem 'rest_client'
 
