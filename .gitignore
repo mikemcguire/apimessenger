@@ -38,3 +38,22 @@ bower.json
 
 #ignore dotenv
 /.env
+
+
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+
+/node_modules/
+/config/database_sample.yml
+
+Capfile
+
+config/deploy.rb
+
+config/deploy/production.rb
+
+config/deploy/provision.rb
+
+config/deploy/staging.rb

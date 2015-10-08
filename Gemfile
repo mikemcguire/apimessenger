@@ -7,8 +7,7 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 
-
-gem 'sqlite3', :group => :development
+gem 'pg'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 

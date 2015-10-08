@@ -1,5 +1,4 @@
 class Candidate < ActiveRecord::Base
-
 	validates :name,
 		uniqueness: true,
 		presence: true
@@ -8,5 +7,4 @@ class Candidate < ActiveRecord::Base
    		length: { minimum: 2}
 	validates :total,
 		presence: true
-
 end
