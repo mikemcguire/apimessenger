@@ -1,7 +1,7 @@
 require "#{Rails.root}/lib/candidatesAPI.rb" 
 
 class CandidatesController < ApplicationController
-	#before_action :get_remote
+	before_action :get_remote
 	def get_remote
 		@list = CandidatesAPI.candidates()
 
