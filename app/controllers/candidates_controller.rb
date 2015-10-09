@@ -23,7 +23,7 @@ class CandidatesController < ApplicationController
   # GET /candidates
   # GET /candidates.json
   def index
-
+  	logger.debug("Farts domino")
     @candidates = Candidate.all
     render :json => @candidates.to_json
   end
