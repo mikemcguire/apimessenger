@@ -4,7 +4,6 @@ class CandidatesController < ApplicationController
 	before_action :get_remote
 	def get_remote
 		@list = CandidatesAPI.candidates()
-		logger.debug("Farts domino")
 		@list.each { | item |
 			attributes = {
 				:name 	=> item['name'],
@@ -23,7 +22,6 @@ class CandidatesController < ApplicationController
   # GET /candidates
   # GET /candidates.json
   def index
-  	logger.debug("Farts domino")
     @candidates = Candidate.all
     render :json => @candidates.to_json
   end
