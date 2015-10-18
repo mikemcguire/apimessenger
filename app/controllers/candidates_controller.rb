@@ -5,8 +5,9 @@ class CandidatesController < ApplicationController
 	def get_remote
 
 		@list = CandidatesAPI.candidates()
-    
-		@list.each {|item|
+		Rails.logger.debug("fart")
+		Rails.logger.debug("fart")		    
+		list.each {|item|
      
 			attributes = {
 				:name 	=> item['name'],
