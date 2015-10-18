@@ -3,15 +3,18 @@ require 'logger'
 class CandidatesController < ApplicationController
 	#before_action :get_remote
 	def get_remote
+
 		@list = CandidatesAPI.candidates()
-		@list.each { | item |
+    
+		@list.each {|item|
+     
 			attributes = {
 				:name 	=> item['name'],
 				:donor 	=> item['donor'],
 				:total 	=> item['total'],
 				:id 	=> item['index']
 			}
-			Candidate.new ( attributes )
+			Candidate.create ( attributes )
 		}
 	end
 
@@ -31,8 +34,6 @@ class CandidatesController < ApplicationController
 
   # GET /candidates/new
   def new
-
-
     @candidate = Candidate.new
   end
 
@@ -44,6 +45,7 @@ class CandidatesController < ApplicationController
   # POST /candidates
   # POST /candidates.json
   def create
+
     @candidate = Candidate.new(candidate_params)
 
     respond_to do |format|
