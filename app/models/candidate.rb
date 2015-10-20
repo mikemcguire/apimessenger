@@ -1,5 +1,8 @@
 class Candidate < ActiveRecord::Base
-	validates :name,
+	validates :first_name,
+		uniqueness: true,
+		presence: true
+	validates :last_name,
 		uniqueness: true,
 		presence: true
    	validates :donor,

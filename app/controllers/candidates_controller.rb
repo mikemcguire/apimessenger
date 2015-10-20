@@ -2,15 +2,13 @@ require "#{Rails.root}/lib/candidatesAPI.rb"
 require 'logger'
 class CandidatesController < ApplicationController
 	#before_action :get_remote
-	def get_remote
-
+	def get_remote 
 		@list = CandidatesAPI.candidates()
-		Rails.logger.debug("fart")
-		Rails.logger.debug("fart")		    
-		list.each {|item|
-     
+		@list.each {|item|
+      name = item['name'].split(' ')
 			attributes = {
-				:name 	=> item['name'],
+				:first_name 	=> name[0],
+        :last_name   => name[1] ,
 				:donor 	=> item['donor'],
 				:total 	=> item['total'],
 				:id 	=> item['index']
@@ -87,6 +85,6 @@ class CandidatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def candidate_params
-      params.require(:candidate).permit( :name, :donor, :total )
+      params.require(:candidate).permit( :first_name, :last_name, :donor, :total )
     end
 end
