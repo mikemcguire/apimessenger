@@ -5,6 +5,8 @@ class CandidatesController < ApplicationController
 	def get_remote 
 		@list = CandidatesAPI.candidates()
 		@list.each {|item|
+      candidate = Candidate.find_or_initialize_by( id: item['index'] )
+      
       name = item['name'].split(' ')
 			attributes = {
 				:first_name 	=> name[0],
@@ -13,7 +15,8 @@ class CandidatesController < ApplicationController
 				:total 	=> item['total'],
 				:id 	=> item['index']
 			}
-			Candidate.create ( attributes )
+      candidate.update(attributes)
+			candidate.save()
 		}
 	end
 
@@ -76,7 +79,10 @@ class CandidatesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  def destroy_all
+    Candidate.destroy_all
+    render puts "fart"
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_candidate
