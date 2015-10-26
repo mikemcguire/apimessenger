@@ -15,6 +15,10 @@ gem 'httparty'
 
 gem 'puma'
 
+gem 'dalli'
+
+gem 'connection_pool'
+
 gem 'whenever', :require => false
 
 group :development do
