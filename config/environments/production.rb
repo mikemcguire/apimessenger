@@ -1,5 +1,4 @@
 Rails.application.configure do
-  set :whenever_environment, 'production'
   # Settings specified here will take precedence over those in config/application.rb.
   config.autoload_paths += Dir["#{config.root}/lib/**/"]
   # Code is not reloaded between requests.
