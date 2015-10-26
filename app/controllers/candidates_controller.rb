@@ -3,21 +3,7 @@ require 'logger'
 class CandidatesController < ApplicationController
 	#before_action :get_remote
 	def get_remote 
-		@list = CandidatesAPI.candidates()
-		@list.each {|item|
-      candidate = Candidate.find_or_initialize_by( id: item['index'] )
-      
-      name = item['name'].split(' ')
-			attributes = {
-				:first_name 	=> name[0],
-        :last_name   => name[1] ,
-				:donor 	=> item['donor'],
-				:total 	=> item['total'],
-				:id 	=> item['index']
-			}
-      candidate.update(attributes)
-			candidate.save()
-		}
+		Candidate.get_remote
 	end
 
 	def show

@@ -15,6 +15,7 @@ gem 'httparty'
 
 gem 'puma'
 
+gem 'whenever', :require => false
 
 group :development do
     gem 'capistrano',         require: false

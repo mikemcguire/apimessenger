@@ -54,6 +54,7 @@ GEM
     capistrano3-puma (1.2.1)
       capistrano (~> 3.0)
       puma (>= 2.6)
+    chronic (0.10.2)
     colorize (0.7.7)
     dotenv (2.0.2)
     dotenv-rails (2.0.2)
@@ -128,6 +129,8 @@ GEM
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    whenever (0.9.4)
+      chronic (>= 0.6.3)
 
 PLATFORMS
   ruby
@@ -145,3 +148,4 @@ DEPENDENCIES
   rails (= 4.2.2)
   rails-api
   spring
+  whenever
