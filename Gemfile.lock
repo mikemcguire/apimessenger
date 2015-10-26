@@ -56,6 +56,8 @@ GEM
       puma (>= 2.6)
     chronic (0.10.2)
     colorize (0.7.7)
+    connection_pool (2.2.0)
+    dalli (2.7.4)
     dotenv (2.0.2)
     dotenv-rails (2.0.2)
       dotenv (= 2.0.2)
@@ -141,6 +143,8 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rvm
   capistrano3-puma
+  connection_pool
+  dalli
   dotenv-rails
   httparty
   pg
